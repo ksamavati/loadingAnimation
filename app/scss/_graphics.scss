@@ -1,0 +1,75 @@
+.screencenter {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; //in front of the circles
+}
+
+.screencenter:after {
+    content: "\274c";
+}
+
+.circle {
+    @include var(background-color, sphereColor);
+    //background-color: $sphereColor;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    left: 230px;
+    top: 155px;
+    //transform: translate(-50%, -50%);
+    animation: figure8 4s linear infinite;
+    z-index: 1; //Behind the screencenter dot
+}
+
+.circle-container {
+    width: 500px;
+    height: 350px;
+    //background: rgb(53, 51, 138);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.shadow-container {
+    width: 500px;
+    height: 350px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.shadow {
+    width: 40px;
+    height: 10px;
+    position: absolute;
+    background: #000;
+    border-radius: 50%;
+    bottom: 5;
+    left: 230px;
+    filter: blur(2px);
+    opacity: 0.4;
+    animation: shadows 4s linear infinite;
+}
+
+.colorButton {
+    width: 200px;
+    height: 50px;
+    background: rgb(29, 29, 131);
+    border-radius: 20px;
+    position: absolute;
+    left: 50%;
+    top: 120%;
+    transform: translate(-50%);
+}
+
+.numInput {
+    position: absolute;
+    left: 50%;
+    top: 107%;
+    transform: translate(-50%);
+}

@@ -1,0 +1,31 @@
+body {
+    background: #16689e;
+}
+
+.container {
+    padding: 10px;
+}
+
+.buttonText {
+    font-size: 20;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    user-select: none; //Disable highlighting text
+    white-space: nowrap; //Disable word wrap
+}
+
+.flex {
+    display: flex;
+    &-jc-sb {
+        justify-content: space-between;
+    }
+    &-jc-c {
+        justify-content: center;
+    }
+    &-ai-c {
+        align-items: center;
+    }
+}

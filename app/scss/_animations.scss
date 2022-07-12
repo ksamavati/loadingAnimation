@@ -1,0 +1,76 @@
+/*            @for $i from 1 through $numCircles {
+                .circle:nth-child(#{$i}) {
+                    animation-delay: $i * (-2s / $numCircles);
+                }
+                .shadow:nth-child(#{$i}) {
+                    animation-delay: $i * (-2s / $numCircles);
+                }
+            }
+*/
+
+@for $i from 1 through $numCircles {
+    .circle:nth-child(#{$i}) {
+        animation-delay: $i * (-2s / $numCircles);
+    }
+    .shadow:nth-child(#{$i}) {
+        animation-delay: $i * (-2s / $numCircles);
+    }
+}
+
+@keyframes figure8 {
+    0% {
+        transform-origin: 300%;
+        transform: rotate(0);
+    }
+    50% {
+        transform-origin: 300%;
+        transform: rotate(360deg);
+    }
+    50.001% {
+        transform-origin: -200%;
+        transform: rotate(0deg);
+    }
+    100% {
+        transform-origin: -200%;
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes shadows {
+    0% {
+        transform: scale(0.75);
+        animation-timing-function: ease-in;
+    }
+    12.5% {
+        transform: translate(100px) scale(0.5);
+        animation-timing-function: ease-out;
+    }
+    25% {
+        transform: translate(200px) scale(0.75);
+        animation-timing-function: ease-in;
+    }
+    37.5% {
+        transform: translate(100px) scale(1);
+        animation-timing-function: ease-out;
+    }
+    50% {
+        transform: translate(0px) scale(0.75);
+        animation-timing-function: ease-in;
+    }
+    62.5% {
+        transform: translate(-100px) scale(0.5);
+        animation-timing-function: ease-out;
+    }
+    75% {
+        transform: translate(-200px) scale(0.75);
+        animation-timing-function: ease-in;
+    }
+    87.5% {
+        transform: translate(-100px) scale(1);
+        animation-timing-function: ease-out;
+    }
+    100% {
+        transform: translate(0px) scale(0.75);
+        animation-timing-function: ease-in;
+    }
+}

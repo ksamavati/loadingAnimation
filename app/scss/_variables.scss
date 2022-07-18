@@ -1,5 +1,5 @@
-//$numCircles: 3;
-//$sphereColor: #0f0;
+$numCircles: 3;
+$sphereColor: #0f0;
 $vars: ( sphereColor: #f00, numCircles: 3);
 @mixin var($property, $variable) {
     #{$property}: map-get($vars, $variable);

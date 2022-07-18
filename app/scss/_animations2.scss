@@ -1,15 +1,15 @@
 @for $i from 1 through $numCircles {
     .circle:nth-child(#{$i}) {
-        animation-delay: $i * calc(-1s / $numCircles);
+        animation-delay: $i * (-1s / $numCircles);
     }
     .shadow:nth-child(#{$i}) {
-        animation-delay: $i * calc(-1s / $numCircles);
+        animation-delay: $i * (-1s / $numCircles);
     }
 }
 
 @keyframes figure8 {
     0% {
-        transform-origin: 50vw;
+        transform-origin: 300%;
         transform: rotate(0);
     }
     50% {

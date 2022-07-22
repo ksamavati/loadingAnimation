@@ -8,13 +8,13 @@ function on_load() {
 
     //var button = document.getElementsByClassName("colorButton");
 
-    console.log('Hello')
-
     document.getElementsByClassName('colorButton')[0]
         .addEventListener('click', function(event) {
-            var numSpheres = document.getElementById('spheres').value
-            console.log(numSpheres)
-            var randomColor = getRandomColor()
+            // let numSpheres = document.getElementById('spheres').value
+            // document.documentElement.style.setProperty('--numCircles', numSpheres)
+            // document.documentElement.style.setProperty('--numCircles', numSpheres)
+
+            let randomColor = getRandomColor()
             document.documentElement.style.setProperty('--sphereColor', randomColor)
 
             //var spheres = document.getElementsByClassName('circle')
@@ -23,7 +23,6 @@ function on_load() {
             //     console.log(i)
             //}
         })
-
 }
 
 function getRandomColor() {

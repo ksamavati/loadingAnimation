@@ -1,7 +1,7 @@
 @charset "UTF-8";
 :root {
   --sphereColor: #f00;
-  --numCircles: 3;
+  --numCircles: 6;
 }
 
 body {
@@ -145,14 +145,44 @@ body {
           animation-delay: -1s;
 }
 
+.circle:nth-child(4) {
+  -webkit-animation-delay: -1.3333333333s;
+          animation-delay: -1.3333333333s;
+}
+
+.shadow:nth-child(4) {
+  -webkit-animation-delay: -1.3333333333s;
+          animation-delay: -1.3333333333s;
+}
+
+.circle:nth-child(5) {
+  -webkit-animation-delay: -1.6666666667s;
+          animation-delay: -1.6666666667s;
+}
+
+.shadow:nth-child(5) {
+  -webkit-animation-delay: -1.6666666667s;
+          animation-delay: -1.6666666667s;
+}
+
+.circle:nth-child(6) {
+  -webkit-animation-delay: -2s;
+          animation-delay: -2s;
+}
+
+.shadow:nth-child(6) {
+  -webkit-animation-delay: -2s;
+          animation-delay: -2s;
+}
+
 @-webkit-keyframes figure8 {
   0% {
-    transform-origin: 50vw;
+    transform-origin: 300%;
     transform: rotate(0);
   }
   50% {
     transform-origin: 300%;
-    trasform: rotate(360deg);
+    transform: rotate(360deg);
   }
   50.001% {
     transform-origin: -200%;
@@ -166,12 +196,12 @@ body {
 
 @keyframes figure8 {
   0% {
-    transform-origin: 50vw;
+    transform-origin: 300%;
     transform: rotate(0);
   }
   50% {
     transform-origin: 300%;
-    trasform: rotate(360deg);
+    transform: rotate(360deg);
   }
   50.001% {
     transform-origin: -200%;

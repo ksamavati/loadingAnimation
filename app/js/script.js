@@ -1,35 +1,41 @@
-const numCircles = '$numCircles'
+const numSpheresSlider = document.getElementById("numSpheresSlider")
+const speedSlider = document.getElementById("speedSlider")
+let numSpheres = numSpheresSlider.value;
 
-//console.log(document.documentElement.style.getPropertyValue(numCircles));
+//When number of spheres slider value changes
+function numSpheresSliderChanged() {
+	if (numSpheres != numSpheresSlider.value) {
+		numSpheres = numSpheresSlider.value;
+		document.documentElement.style.setProperty('--num-spheres', numSpheres)
 
-//const document.documentElement.style.getPropertyValue(numCircles)
+		//Clear all spheres and shadows
+		document.getElementById("sphere-container").innerHTML = "";
+		document.getElementById("shadow-container").innerHTML = "";
 
-function on_load() {
-
-    //var button = document.getElementsByClassName("colorButton");
-
-    document.getElementsByClassName('colorButton')[0]
-        .addEventListener('click', function(event) {
-            // let numSpheres = document.getElementById('spheres').value
-            // document.documentElement.style.setProperty('--numCircles', numSpheres)
-            // document.documentElement.style.setProperty('--numCircles', numSpheres)
-
-            let randomColor = getRandomColor()
-            document.documentElement.style.setProperty('--sphereColor', randomColor)
-
-            //var spheres = document.getElementsByClassName('circle')
-            //for (i = 0; i < spheres.length; i++) {
-            //    spheres[i].style.setProperty('--sphereColor', 'green')
-            //     console.log(i)
-            //}
-        })
+		for (i = 1; i <= numSpheres; i++) {
+			document.getElementById("sphere-container").appendChild(document.createElement("div"));
+			document.getElementById("sphere-container").lastChild.classList.add('sphere');
+			document.getElementById("shadow-container").appendChild(document.createElement("div"));
+			document.getElementById("shadow-container").lastChild.classList.add('shadow');
+		}
+	}
 }
+
+//When animation speed slider value changes
+function speedSliderChanged() {
+	document.documentElement.style.setProperty('--animation-speed', speedSlider.value)
+}
+
+document.getElementById('colorButton')
+	.addEventListener('click', function (event) {
+
+		let randomColor = getRandomColor();
+		document.documentElement.style.setProperty('--sphereColor', randomColor);
+	})
 
 function getRandomColor() {
-    var color = Math.floor(Math.random() * 16777215).toString(16)
-    while (color.length < 6) color = "0" + color;
-    color = "#" + color;
-    return color;
+	var color = Math.floor(Math.random() * 16777215).toString(16);
+	while (color.length < 6) color = "0" + color;
+	color = "#" + color;
+	return color;
 }
-
-window.onload = on_load();

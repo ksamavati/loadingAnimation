@@ -3,79 +3,120 @@
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%);
-	z-index: 2; //in front of the circles
+	z-index: 2; //in front of the spheres
 }
 
 .screencenter:after {
 	content: "\274c";
 }
 
-.circle {
+.sphere {
 	@include var(background-color, sphereColor);
-	//background-color: $sphereColor;
-	width: 40px;
-	height: 40px;
+	width: 9.090909%;
+	height: 16.666667%;
 	border-radius: 50%;
 	position: absolute;
-	left: 230px;
-	top: 155px;
-	//transform: translate(-50%, -50%);
-	animation: figure8 4s linear infinite;
-	z-index: 1; //Behind the screencenter dot
-}
-
-.circle-container {
-	width: 500px;
-	height: 350px;
-	//background: rgb(53, 51, 138);
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-}
-
-.shadow-container {
-	width: 500px;
-	height: 350px;
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
+	left: 45.454545%;
+	top: 41.666667%;
+	animation: figure8 calc(4s / (var(--animation-speed) / 100)) linear infinite;
 }
 
 .shadow {
-	width: 40px;
-	height: 10px;
 	position: absolute;
+	width: 9.090909%;
+	height: 100%;
 	background: #000;
 	border-radius: 50%;
-	bottom: 5;
-	left: 230px;
+	bottom: 2%;
+	left: 45.454545%;
 	filter: blur(2px);
 	opacity: 0.4;
-	animation: shadows 4s linear infinite;
+	animation: shadows calc(4s / (var(--animation-speed) / 100)) linear infinite;
 }
 
-.colorButton {
+#container {
+	padding: 10px 10px 10px 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#sphere-container {
+	position: relative;
+	width: 440px;
+	max-width: 100%;
+	aspect-ratio: 11 / 6;
+	margin-bottom: 2%;
+}
+
+#shadow-container {
+	position: relative;
+	width: 440px;
+	max-width: 100%;
+	aspect-ratio: 44 / 1;
+}
+
+.range-container {
+	width: 440px;
+	max-width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 20px;
+}
+
+#colorButton {
 	width: 200px;
 	height: 50px;
 	background: rgb(29, 29, 131);
 	border-radius: 20px;
-	position: absolute;
-	left: 50%;
-	top: 120%;
-	transform: translate(-50%);
 	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+.buttonText {
+	font-size: 20px;
+	color: white;
+	-webkit-user-select: none; // Adds safari support for below
+	user-select: none; //Disable highlighting text
+	white-space: nowrap; //Disable word wrap
 }
 
 // Button turns lighter blue when clicked
-.colorButton:active {
+#colorButton:active {
 	background: hsl(240, 64%, 45%);
 }
 
-.numInput {
-	position: absolute;
+.slider-header {
+	font-size: 24px;
+	margin: 0;
+}
+
+.num-input {
 	left: 50%;
-	top: 107%;
-	transform: translate(-50%);
+	width: 92%;
+}
+
+#tickmarks {
+	left: 50%;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	justify-content: space-between;
+	// writing-mode: vertical-lr;
+	width: 94%;
+	margin-top: 2px;
+}
+
+option {
+	padding: 0;
+	width: 24px;
+	text-align: center;
+}
+
+input[type="range"] {
+	margin: 0;
 }

@@ -1,66 +1,87 @@
-@for $i from 1 through $numCircles {
-    .circle:nth-child(#{$i}) {
-        animation-delay: $i * calc(-2s / $numCircles);
-    }
-    .shadow:nth-child(#{$i}) {
-        animation-delay: $i * calc(-2s / $numCircles);
-    }
+@for $i from 1 through 14 {
+	.sphere:nth-child(#{$i}) {
+		animation-delay: calc($i * calc(calc(-2s * calc(1 /calc(var(--animation-speed) / 100))) / var(--num-spheres)));
+	}
+
+	.shadow:nth-child(#{$i}) {
+		animation-delay: calc($i * calc(calc(-2s * calc(1 /calc(var(--animation-speed) / 100))) / var(--num-spheres)));
+	}
 }
 
 @keyframes figure8 {
-    0% {
-        transform-origin: 300%;
-        transform: rotate(0);
-    }
-    50% {
-        transform-origin: 300%;
-        transform: rotate(360deg);
-    }
-    50.001% {
-        transform-origin: -200%;
-        transform: rotate(0deg);
-    }
-    100% {
-        transform-origin: -200%;
-        transform: rotate(-360deg);
-    }
+	0% {
+		transform-origin: 300%;
+		transform: rotate(0deg);
+	}
+
+	50% {
+		transform-origin: 300%;
+		transform: rotate(360deg);
+	}
+
+	50.001% {
+		transform-origin: -200%;
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform-origin: -200%;
+		transform: rotate(-360deg);
+	}
 }
 
 @keyframes shadows {
-    0% {
-        transform: scale(0.75);
-        animation-timing-function: ease-in;
-    }
-    12.5% {
-        transform: translate(100px) scale(0.5);
-        animation-timing-function: ease-out;
-    }
-    25% {
-        transform: translate(200px) scale(0.75);
-        animation-timing-function: ease-in;
-    }
-    37.5% {
-        transform: translate(100px) scale(1);
-        animation-timing-function: ease-out;
-    }
-    50% {
-        transform: translate(0px) scale(0.75);
-        animation-timing-function: ease-in;
-    }
-    62.5% {
-        transform: translate(-100px) scale(0.5);
-        animation-timing-function: ease-out;
-    }
-    75% {
-        transform: translate(-200px) scale(0.75);
-        animation-timing-function: ease-in;
-    }
-    87.5% {
-        transform: translate(-100px) scale(1);
-        animation-timing-function: ease-out;
-    }
-    100% {
-        transform: translate(0px) scale(0.75);
-        animation-timing-function: ease-in;
-    }
+	0% {
+		transform-origin: 50%;
+		transform: scale(0.75);
+		animation-timing-function: ease-in;
+	}
+
+	12.5% {
+		transform-origin: 50%;
+		transform: translate(250%) scale(0.5);
+		animation-timing-function: ease-out;
+	}
+
+	25% {
+		transform-origin: 50%;
+		transform: translate(500%) scale(0.75);
+		animation-timing-function: ease-in;
+	}
+
+	37.5% {
+		transform-origin: 50%;
+		transform: translate(250%) scale(1);
+		animation-timing-function: ease-out;
+	}
+
+	50% {
+		transform-origin: 50%;
+		transform: translate(0%) scale(0.75);
+		animation-timing-function: ease-in;
+	}
+
+	62.5% {
+		transform-origin: 50%;
+		transform: translate(-250%) scale(0.5);
+		animation-timing-function: ease-out;
+	}
+
+	75% {
+		transform-origin: 50%;
+		transform: translate(-500%) scale(0.75);
+		animation-timing-function: ease-in;
+	}
+
+	87.5% {
+		transform-origin: 50%;
+		transform: translate(-250%) scale(1);
+		animation-timing-function: ease-out;
+	}
+
+	100% {
+		transform-origin: 50%;
+		transform: translate(0px) scale(0.75);
+		animation-timing-function: ease-in;
+	}
 }

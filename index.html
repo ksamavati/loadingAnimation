@@ -1,40 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Loading Animation</title>
 	<link rel="stylesheet" href="./dist/style.css">
 </head>
 
 <body>
-	<div class="container">
-		<div class="circle-container">
-			<div class="circle"></div>
-			<div class="circle"></div>
-			<div class="circle"></div>
-			<div class="circle"></div>
-			<div class="circle"></div>
-			<div class="circle"></div>
-			<!-- <div class="circle"></div> -->
+	<div id="container">
+		<div id="sphere-container">
+			<div class="sphere sphere6"></div>
+			<div class="sphere sphere6"></div>
+			<div class="sphere sphere6"></div>
+			<div class="sphere sphere6"></div>
+			<div class="sphere sphere6"></div>
+			<div class="sphere sphere6"></div>
 		</div>
-		<div class="shadow-container">
-			<div class="shadow"></div>
-			<div class="shadow"></div>
-			<div class="shadow"></div>
-			<div class="shadow"></div>
-			<div class="shadow"></div>
-			<div class="shadow"></div>
-			<!-- <div class="shadow"></div> -->
-
-			<!-- <input type="number" id="spheres" name="spheres" max="50" min="0" value="6" class="numInput"> -->
-
-			<div class="colorButton">
-				<div class="buttonText">Random Color</div>
-			</div>
+		<div id="shadow-container">
+			<div class="shadow shadow6"></div>
+			<div class="shadow shadow6"></div>
+			<div class="shadow shadow6"></div>
+			<div class="shadow shadow6"></div>
+			<div class="shadow shadow6"></div>
+			<div class="shadow shadow6"></div>
 		</div>
-
-
-
-
-
+		<div class="range-container">
+			<p class="slider-header">Number of Spheres:</p>
+			<input title="Number of Spheres" type="range" id="numSpheresSlider" max="14" min="1" value="6" class="num-input"
+				list="tickmarks" onchange="numSpheresSliderChanged();">
+			<datalist id="tickmarks">
+				<option value="1" label="1"></option>
+				<option value="2" label="2"></option>
+				<option value="3" label="3"></option>
+				<option value="4" label="4"></option>
+				<option value="5" label="5"></option>
+				<option value="6" label="6"></option>
+				<option value="7" label="7"></option>
+				<option value="8" label="8"></option>
+				<option value="9" label="9"></option>
+				<option value="10" label="10"></option>
+				<option value="11" label="11"></option>
+				<option value="12" label="12"></option>
+				<option value="13" label="13"></option>
+				<option value="14" label="14"></option>
+			</datalist>
+		</div>
+		<div class="range-container">
+			<p class="slider-header">Animation Speed:</p>
+			<input title="Animation Speed" type="range" id="speedSlider" max="200" min="10" value="100" class="num-input"
+				onchange="speedSliderChanged();">
+		</div>
+		<div id="colorButton">
+			<div class="buttonText">Random Color</div>
+		</div>
 	</div>
-
 
 	<script src="./app/js/script.js"></script>
 </body>
+
+</html>

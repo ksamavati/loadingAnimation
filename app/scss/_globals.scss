@@ -1,21 +1,18 @@
+* {
+	box-sizing: border-box;
+}
+
 body {
-	background: #16689e;
-}
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: #eee;
 
-.container {
-	padding: 10px;
-}
-
-.buttonText {
-	font-size: 20;
-	color: white;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	-webkit-user-select: none; // Adds safari support for below
-	user-select: none; //Disable highlighting text
-	white-space: nowrap; //Disable word wrap
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	overflow: auto;
 }
 
 .flex {

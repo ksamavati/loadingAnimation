@@ -1,14 +1,18 @@
-$numCircles: 6;
-$sphereColor: #0f0;
-$vars: ( sphereColor: #f00, numCircles: 6);
+$vars: (
+	sphereColor: #f00,
+	num-spheres: 6,
+	animation-speed: 100
+);
+
 @mixin var($property, $variable) {
-    #{$property}: map-get($vars, $variable);
-    #{$property}: var(--#{$variable});
+	#{$property}: map-get($vars, $variable);
+	#{$property}: var(--#{$variable});
 }
 
 :root {
-    @each $property,
-    $value in $vars {
-        --#{$property}: #{$value};
-    }
+
+	@each $property,
+	$value in $vars {
+		--#{$property}: #{$value};
+	}
 }
